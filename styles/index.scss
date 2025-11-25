@@ -1,0 +1,538 @@
+// ===========================
+// 기본 설정
+// ===========================
+/* 공통 */
+body {
+    color: #222;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.title_wrap {
+    padding-bottom: 20px;
+}
+.title {
+    margin-bottom: 10px;
+    font-family: "Sree Krushnadevaraya", serif;
+    font-size: 3rem;
+    font-weight: 700;
+}
+.sub_title {
+    font-size: 1rem;
+    color: #777;
+}
+.more p {
+    text-align: right;
+    margin: 5px 0;
+    cursor: pointer;
+    &:hover {
+        color: #c15b7f;
+    }
+}
+.sale_pros
+    {
+    display: flex;
+    position: relative;
+    border-radius: 12px;
+    padding: 8px;
+    gap: 20px;
+    transition: .3s;
+    .img_wrap {
+        position: relative;
+
+        img {
+        }
+        &:hover {
+            background: rgba(255,152,154,0.14);
+            border-radius: 10px;
+        }
+        &:hover .icon_box {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            pointer-events: auto;
+        }
+        .icon_box {
+            background-color: rgba(255,255,255,0.9);
+            padding: 10px 15px;
+            border-radius: 50px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            opacity: 0;
+            transition: .3s;
+            display: flex;
+            gap: 15px;
+            pointer-events: none;
+        }
+    }
+}
+
+
+// ===========================
+// HEADER
+// ===========================
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,0.9);
+    z-index: 100;
+
+    .logo img {
+        width: 140px;
+    }
+
+    .top_bnr {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        nav {
+            display: flex;
+            gap: 25px;
+
+            a {
+                font-size: 1rem;
+                font-weight: 500;
+                padding: 5px 0;
+                position: relative;
+
+                &:hover {
+                    color: #c15b7f;
+                }
+            }
+        }
+
+        .search_shopping {
+            display: flex;
+            gap: 15px;
+
+            img {
+                width: 22px;
+            }
+        }
+    }
+}
+
+#mainpage{
+    position: relative;
+    width: 100%;
+    height: auto;
+    .swiper {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .swiper-slide {
+        width: 100%;
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+    .custom-pagination {
+        justify-content: center;
+        position: absolute;
+        bottom: 40px; // 바닥에서 조금 위
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 5px;
+        z-index: 10;
+        pointer-events: all;
+
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: rgba(255,255,255,0.5);
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            border-radius: 50%;
+            opacity: 1;
+            transition: all .3s ease;
+        }
+
+        .swiper-pagination-bullet-active {
+            width: 18px;
+            height: 18px;
+            background: black;
+
+            transform: scale(0.8);
+        }
+    }
+    p {
+        position: relative;
+        button {
+            position: absolute;
+            left: calc(50% + 100px);
+            bottom: 600px;
+            transform: translateX(0);
+            background: #1c1d1f;
+            color: #fff;
+            border-radius: 10px;
+            padding: 15px 15px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: .3s;
+            &:hover {
+                background: #000;
+            }
+        }
+    }
+}
+// ===========================
+// BEST SELLER
+// ===========================
+#bestseller {
+    position: relative;   // ⭐⭐ 이거 무조건 필요
+    padding: 100px 150px 0;
+    text-align: center;
+
+
+    .swiper {
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+    }
+
+    .img_wrap {
+        position: relative;
+        padding: 10px;
+        border-radius: 12px;
+        transition: .3s;
+        &:hover {
+            background: rgba(255,152,154,0.14);
+        }
+        img {
+        }
+        .icon_box {
+            background: rgba(255,255,255,0.9);
+            padding: 10px 15px;
+            border-radius: 50px;
+            display: flex;
+            gap: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(.8);
+            opacity: 0;
+            transition: .3s;
+        }
+        &:hover .icon_box {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+
+    .bestseller-pagination {
+        position: absolute;
+        top: calc(100% + 20px);  // ⭐ BESTSELLER 아래로 완전 분리
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.3);
+            transition: .3s;
+        }
+
+        .swiper-pagination-bullet-active {
+            width: 10px;
+            height: 10px;
+            background: #c15b7f;
+        }
+    }
+}
+// ===========================
+// SALE
+// ===========================
+#sale {
+    background: #fafafa;
+    .title_wrap {
+        margin: 50PX 0;
+        text-align: center;
+    }
+    .more {}
+    padding: 0 150px;
+    margin-top: 100px;
+    .sale_wrap {
+        gap: 100px;
+        display: flex;
+        flex-flow: column;
+        .left p {
+            position: relative;
+            button {
+                position: absolute;
+                bottom: 40px;
+                transform: translateX(-150%);
+            }
+        }
+        .right p {
+            position: relative;
+            button {
+                position: absolute;
+                bottom: 40px;
+                transform: translateX(-550%);
+            }
+        }
+        .bundle {
+            display: flex;
+            gap: 50px;
+            justify-content: space-between;
+            .sale_pros {
+                display: flex;
+                gap: 50px;
+            }
+        }
+        .first_wrap,
+        .second_wrap {
+            display: flex;
+            flex-flow: column;
+            gap: 20px;
+        }
+    }
+}
+.collab_img {
+    margin-top: 100px;
+}
+// ===========================
+// COLLABORATION
+// ===========================
+#bestseller {
+    position: relative;   // ⭐⭐ 이거 무조건 필요
+    padding:0 150px 100px;
+    text-align: center;
+
+
+    .swiper {
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+    }
+
+    .img_wrap {
+        position: relative;
+        padding: 10px;
+        border-radius: 12px;
+        transition: .3s;
+        &:hover {
+            background: rgba(255,152,154,0.14);
+        }
+        img {
+        }
+        .icon_box {
+            background: rgba(255,255,255,0.9);
+            padding: 10px 15px;
+            border-radius: 50px;
+            display: flex;
+            gap: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(.8);
+            opacity: 0;
+            transition: .3s;
+        }
+        &:hover .icon_box {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+
+    .bestseller-pagination {
+        position: absolute;
+        top: calc(100% + 20px);  // ⭐ BESTSELLER 아래로 완전 분리
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.3);
+            transition: .3s;
+        }
+
+        .swiper-pagination-bullet-active {
+            width: 10px;
+            height: 10px;
+            background: #c15b7f;
+        }
+    }
+}
+// ===========================
+// EVENT
+// ===========================
+#event {
+    text-align: center;
+    padding: 50px 150px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+
+    div {
+        justify-content: center;
+        display: flex;
+        gap: 20px;
+
+        a {
+            flex: 1;
+
+            img {
+                border-radius: 12px;
+                transition: .3s;
+
+                &:hover {
+                    transform: scale(1.03);
+                }
+            }
+        }
+    }
+}
+// ===========================
+// CONSULT
+// ===========================
+#cunsult {
+    text-align: center;
+    p {
+        position: relative; /* 버튼 위치 기준이 되는 부모 */
+        display: inline-block; /* 이미지 크기만큼만 영역 확보 */
+    }
+    button {
+        position: absolute;
+        left: calc(50% + 300px);
+        bottom: 300px;
+        transform: translateX(0);
+        padding: 15px 15px;
+        border: none;
+        background: #1c1d1f;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 6px;
+        transition: .3s;
+
+        &:hover {
+            background: #000;
+        }
+    }
+}
+// ===========================
+// INSTAGRAM
+// ===========================
+#instagram {
+    text-align: center;
+    padding: 150px 40px;
+    background: #fafafa;
+
+    .title_wrap {
+        .title {
+            margin-bottom: 50px;
+        }
+    }
+}
+
+#footer {
+    background: #EFE3E3; /* 은은한 베이지 */
+    padding: 60px 0;
+
+    .footer_inner {
+        width: 90%;
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 60px;
+    }
+
+    /* 로고 + SNS */
+    .logo_area {
+        text-align: center;
+        flex: 1;
+
+        img {
+            width: 150px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 0.9rem;
+            margin: 10px 0;
+            color: #444;
+        }
+
+        .sns {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+
+            a img {
+                width: 22px;
+                opacity: 0.7;
+                transition: 0.3s;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    /* 오른쪽 텍스트 컬럼 */
+    .footer_menu {
+        flex: 1;
+
+        h4 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        ul {
+            line-height: 1.9;
+            display: flex;
+            flex-flow: column;
+            gap: 10px;
+            li {
+                
+                font-size: 0.9rem;
+                color: #555;
+
+                a {
+                    color: #555;
+                    transition: 0.3s;
+
+                    &:hover {
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+}

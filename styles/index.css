@@ -1,0 +1,480 @@
+@charset "UTF-8";
+/* 공통 */
+body {
+  color: #222;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.title_wrap {
+  padding-bottom: 20px;
+}
+
+.title {
+  margin-bottom: 10px;
+  font-family: "Sree Krushnadevaraya", serif;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.sub_title {
+  font-size: 1rem;
+  color: #777;
+}
+
+.more p {
+  text-align: right;
+  margin: 5px 0;
+  cursor: pointer;
+}
+.more p:hover {
+  color: #c15b7f;
+}
+
+.sale_pros {
+  display: flex;
+  position: relative;
+  border-radius: 12px;
+  padding: 8px;
+  gap: 20px;
+  transition: 0.3s;
+}
+.sale_pros .img_wrap {
+  position: relative;
+}
+.sale_pros .img_wrap:hover {
+  background: rgba(255, 152, 154, 0.14);
+  border-radius: 10px;
+}
+.sale_pros .img_wrap:hover .icon_box {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
+}
+.sale_pros .img_wrap .icon_box {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px 15px;
+  border-radius: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  transition: 0.3s;
+  display: flex;
+  gap: 15px;
+  pointer-events: none;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 100;
+}
+header .logo img {
+  width: 140px;
+}
+header .top_bnr {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+header .top_bnr nav {
+  display: flex;
+  gap: 25px;
+}
+header .top_bnr nav a {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 5px 0;
+  position: relative;
+}
+header .top_bnr nav a:hover {
+  color: #c15b7f;
+}
+header .top_bnr .search_shopping {
+  display: flex;
+  gap: 15px;
+}
+header .top_bnr .search_shopping img {
+  width: 22px;
+}
+
+#mainpage {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+#mainpage .swiper {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+#mainpage .swiper-slide {
+  width: 100%;
+}
+#mainpage .swiper-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+#mainpage .custom-pagination {
+  justify-content: center;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+  z-index: 10;
+  pointer-events: all;
+}
+#mainpage .custom-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+#mainpage .custom-pagination .swiper-pagination-bullet-active {
+  width: 18px;
+  height: 18px;
+  background: black;
+  transform: scale(0.8);
+}
+#mainpage p {
+  position: relative;
+}
+#mainpage p button {
+  position: absolute;
+  left: calc(50% + 100px);
+  bottom: 600px;
+  transform: translateX(0);
+  background: #1c1d1f;
+  color: #fff;
+  border-radius: 10px;
+  padding: 15px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+#mainpage p button:hover {
+  background: #000;
+}
+
+#bestseller {
+  position: relative;
+  padding: 100px 150px 0;
+  text-align: center;
+}
+#bestseller .swiper {
+  width: 100%;
+  margin-top: 40px;
+}
+#bestseller .swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+#bestseller .img_wrap {
+  position: relative;
+  padding: 10px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+#bestseller .img_wrap:hover {
+  background: rgba(255, 152, 154, 0.14);
+}
+#bestseller .img_wrap .icon_box {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 15px;
+  border-radius: 50px;
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  transition: 0.3s;
+}
+#bestseller .img_wrap:hover .icon_box {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+#bestseller .bestseller-pagination {
+  position: absolute;
+  top: calc(100% + 20px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+#bestseller .bestseller-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+#bestseller .bestseller-pagination .swiper-pagination-bullet-active {
+  width: 10px;
+  height: 10px;
+  background: #c15b7f;
+}
+
+#sale {
+  background: #fafafa;
+}
+#sale .title_wrap {
+  margin: 50PX 0;
+  text-align: center;
+}
+#sale {
+  padding: 0 150px;
+  margin-top: 100px;
+}
+#sale .sale_wrap {
+  gap: 100px;
+  display: flex;
+  flex-flow: column;
+}
+#sale .sale_wrap .left p {
+  position: relative;
+}
+#sale .sale_wrap .left p button {
+  position: absolute;
+  bottom: 40px;
+  transform: translateX(-150%);
+}
+#sale .sale_wrap .right p {
+  position: relative;
+}
+#sale .sale_wrap .right p button {
+  position: absolute;
+  bottom: 40px;
+  transform: translateX(-550%);
+}
+#sale .sale_wrap .bundle {
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+}
+#sale .sale_wrap .bundle .sale_pros {
+  display: flex;
+  gap: 50px;
+}
+#sale .sale_wrap .first_wrap,
+#sale .sale_wrap .second_wrap {
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+}
+
+.collab_img {
+  margin-top: 100px;
+}
+
+#bestseller {
+  position: relative;
+  padding: 0 150px 100px;
+  text-align: center;
+}
+#bestseller .swiper {
+  width: 100%;
+  margin-top: 40px;
+}
+#bestseller .swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+#bestseller .img_wrap {
+  position: relative;
+  padding: 10px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+#bestseller .img_wrap:hover {
+  background: rgba(255, 152, 154, 0.14);
+}
+#bestseller .img_wrap .icon_box {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 15px;
+  border-radius: 50px;
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  transition: 0.3s;
+}
+#bestseller .img_wrap:hover .icon_box {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+#bestseller .bestseller-pagination {
+  position: absolute;
+  top: calc(100% + 20px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+#bestseller .bestseller-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+#bestseller .bestseller-pagination .swiper-pagination-bullet-active {
+  width: 10px;
+  height: 10px;
+  background: #c15b7f;
+}
+
+#event {
+  text-align: center;
+  padding: 50px 150px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+#event div {
+  justify-content: center;
+  display: flex;
+  gap: 20px;
+}
+#event div a {
+  flex: 1;
+}
+#event div a img {
+  border-radius: 12px;
+  transition: 0.3s;
+}
+#event div a img:hover {
+  transform: scale(1.03);
+}
+
+#cunsult {
+  text-align: center;
+}
+#cunsult p {
+  position: relative; /* 버튼 위치 기준이 되는 부모 */
+  display: inline-block; /* 이미지 크기만큼만 영역 확보 */
+}
+#cunsult button {
+  position: absolute;
+  left: calc(50% + 300px);
+  bottom: 300px;
+  transform: translateX(0);
+  padding: 15px 15px;
+  border: none;
+  background: #1c1d1f;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+#cunsult button:hover {
+  background: #000;
+}
+
+#instagram {
+  text-align: center;
+  padding: 150px 40px;
+  background: #fafafa;
+}
+#instagram .title_wrap .title {
+  margin-bottom: 50px;
+}
+
+#footer {
+  background: #EFE3E3; /* 은은한 베이지 */
+  padding: 60px 0;
+}
+#footer .footer_inner {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+}
+#footer {
+  /* 로고 + SNS */
+}
+#footer .logo_area {
+  text-align: center;
+  flex: 1;
+}
+#footer .logo_area img {
+  width: 150px;
+  margin-bottom: 10px;
+}
+#footer .logo_area p {
+  font-size: 0.9rem;
+  margin: 10px 0;
+  color: #444;
+}
+#footer .logo_area .sns {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+#footer .logo_area .sns a img {
+  width: 22px;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+#footer .logo_area .sns a img:hover {
+  opacity: 1;
+}
+#footer {
+  /* 오른쪽 텍스트 컬럼 */
+}
+#footer .footer_menu {
+  flex: 1;
+}
+#footer .footer_menu h4 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #333;
+}
+#footer .footer_menu ul {
+  line-height: 1.9;
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+#footer .footer_menu ul li {
+  font-size: 0.9rem;
+  color: #555;
+}
+#footer .footer_menu ul li a {
+  color: #555;
+  transition: 0.3s;
+}
+#footer .footer_menu ul li a:hover {
+  color: #000;
+}
+
+/*# sourceMappingURL=index.css.map */

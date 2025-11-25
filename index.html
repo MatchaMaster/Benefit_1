@@ -4,8 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>베네피트 | 코리아</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/index.css">
+    <!-- 글씨체 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sree+Krushnadevaraya&display=swap" rel="stylesheet">
+    <!-- 스크립트 -->
+    <script src="/scripts/index.js" defer></script>
+    <!--플러그인 필수 css cdn 연결-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -27,7 +38,15 @@
             </div>
         </div>
     </header>
+    <main>
         <div id="mainpage">
+            <div class="swiper mainSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="/images/mainpage1.png"></div>
+                    <div class="swiper-slide"><img src="/images/mainpage.png"></div>
+                </div>
+                <div class="swiper-pagination custom-pagination"></div>
+            </div>
         </div>
         <div id="bestseller">
             <div class="title_wrap">
@@ -37,70 +56,346 @@
             <div class="more">
                 <p>전체보기</p>
             </div>
-            <div class="best_pro">
-                <a href="#"><img src="images/best1.png" alt=""></a>
-                <a href="#"><img src="images/best2.png" alt=""></a>
-                <a href="#"><img src="images/best3.png" alt=""></a>
-                <a href="#"><img src="images/best4.png" alt=""></a>
-                <a href="#"><img src="images/best5.png" alt=""></a>
+            <div class="swiper bestSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="img_wrap">
+                            <img src="images/best1.png">
+                            <div class="icon_box">
+                                <a href="#"><img src="images/favorite.png"></a>
+                                <a href="#"><img src="images/pack.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img_wrap">
+                            <img src="images/best2.png">
+                            <div class="icon_box">
+                                <a href="#"><img src="images/favorite.png"></a>
+                                <a href="#"><img src="images/pack.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img_wrap">
+                            <img src="images/best3.png">
+                            <div class="icon_box">
+                                <a href="#"><img src="images/favorite.png"></a>
+                                <a href="#"><img src="images/pack.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img_wrap">
+                            <img src="images/best4.png">
+                            <div class="icon_box">
+                                <a href="#"><img src="images/favorite.png"></a>
+                                <a href="#"><img src="images/pack.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img_wrap">
+                            <img src="images/best5.png">
+                            <div class="icon_box">
+                                <a href="#"><img src="images/favorite.png"></a>
+                                <a href="#"><img src="images/pack.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img_wrap">
+                            <img src="images/best1.png">
+                            <div class="icon_box">
+                                <a href="#"><img src="images/favorite.png"></a>
+                                <a href="#"><img src="images/pack.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img_wrap">
+                            <img src="images/best2.png">
+                            <div class="icon_box">
+                                <a href="#"><img src="images/favorite.png"></a>
+                                <a href="#"><img src="images/pack.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img_wrap">
+                            <img src="images/best3.png">
+                            <div class="icon_box">
+                                <a href="#"><img src="images/favorite.png"></a>
+                                <a href="#"><img src="images/pack.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 나머지 3개도 같은 방식으로 -->
+                </div>
+                <!-- 커스텀 페이징 넣을거면 이거 추가 -->
             </div>
-        </div>
+            <div class="swiper-pagination bestseller-pagination"></div>
+        </div>       
         <div id="sale">
             <div class="title_wrap">
                 <p class="title">Sale</p>
                 <p class="sub_title">인기상품 할인전</p>
             </div>
+            <div class="sale_wrap">
+                <div class="bundle">
+                    <div class="left">
+                        <p>
+                            <img src="images/tintpic.png" alt="">
+                            <button><img src="images/rightdirect.png" alt=""></button>
+                        </p>
+                    </div>
+                    <div class="sale_pros">
+                        <div class="first_wrap">
+                            <div class="img_wrap">
+                                <img src="images/tint1.png">
+                                <div class="icon_box">
+                                    <a href="#"><img src="images/favorite.png" alt=""></a>
+                                    <a href="#"><img src="images/pack.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="img_wrap">
+                                <img src="images/tint2 (2).png">
+                                <div class="icon_box">
+                                    <a href="#"><img src="images/favorite.png" alt=""></a>
+                                    <a href="#"><img src="images/pack.png" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="second_wrap">
+                            <div class="img_wrap">
+                                <img src="images/tint3.png">
+                                <div class="icon_box">
+                                    <a href="#"><img src="images/favorite.png" alt=""></a>
+                                    <a href="#"><img src="images/pack.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="img_wrap">
+                                <img src="images/tint4 (2).png">
+                                <div class="icon_box">
+                                    <a href="#"><img src="images/favorite.png" alt=""></a>
+                                    <a href="#"><img src="images/pack.png" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bundle">
+                    <div class="sale_pros">
+                        <div class="first_wrap">
+                            <div class="img_wrap">
+                                <img src="images/blush1.png">
+                                <div class="icon_box">
+                                    <a href="#"><img src="images/favorite.png" alt=""></a>
+                                    <a href="#"><img src="images/pack.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="img_wrap">
+                                <img src="images/blush2.png">
+                                <div class="icon_box">
+                                    <a href="#"><img src="images/favorite.png" alt=""></a>
+                                    <a href="#"><img src="images/pack.png" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="second_wrap">
+                            <div class="img_wrap">
+                                <img src="images/blush3.png">
+                                <div class="icon_box">
+                                    <a href="#"><img src="images/favorite.png" alt=""></a>
+                                    <a href="#"><img src="images/pack.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="img_wrap">
+                                <img src="images/blush4.png">
+                                <div class="icon_box">
+                                    <a href="#"><img src="images/favorite.png" alt=""></a>
+                                    <a href="#"><img src="images/pack.png" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <p>
+                            <img src="images/blushpic.png" alt="">
+                            <button><img src="images/leftdirect.png" alt=""></button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="collab_img">
+            <p><img src="images/collab.png" alt=""></p>
+        </div>
+        <div id="bestseller">
+            <div class="title_wrap">
+                <p class="title">collaboration</p>
+            </div>
             <div class="more">
                 <p>전체보기</p>
             </div>
-            <div class="sale_wrap">
-                <div class="left">
-                    <a href="#"><img src="images/tintpic.png" alt=""></a>
-                </div>
-                <div class="right">
-                    <div class="up">
-                        <a href="#"><img src="images/tint1.png" alt=""></a>
-                        <a href="#"><img src="images/tint2.png" alt=""></a>
+            <div class="swiper bestSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="img_wrap">
+                            <img src="images/collab1.png">
+                            <div class="icon_box">
+                                <a href="#"><img src="images/favorite.png"></a>
+                                <a href="#"><img src="images/pack.png"></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="down">
-                        <a href="#"><img src="images/tint3.png" alt=""></a>
-                        <a href="#"><img src="images/tint4.png" alt=""></a>
+                    <div class="swiper-slide">
+                        <div class="img_wrap">
+                            <img src="images/collab2.png">
+                            <div class="icon_box">
+                                <a href="#"><img src="images/favorite.png"></a>
+                                <a href="#"><img src="images/pack.png"></a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="right">
-                    <a href="#"><img src="images/blushpic.png" alt=""></a>
-                </div>
-                <div class="left">
-                    <div class="up">
-                        <a href="#"><img src="images/blush1.png" alt=""></a>
-                        <a href="#"><img src="images/blush2.png" alt=""></a>
+                    <div class="swiper-slide">
+                        <div class="img_wrap">
+                            <img src="images/collab3.png">
+                            <div class="icon_box">
+                                <a href="#"><img src="images/favorite.png"></a>
+                                <a href="#"><img src="images/pack.png"></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="down">
-                        <a href="#"><img src="images/blush3.png" alt=""></a>
-                        <a href="#"><img src="images/blush4.png" alt=""></a>
+                    <div class="swiper-slide">
+                        <div class="img_wrap">
+                            <img src="images/collab4.png">
+                            <div class="icon_box">
+                                <a href="#"><img src="images/favorite.png"></a>
+                                <a href="#"><img src="images/pack.png"></a>
+                            </div>
+                        </div>
                     </div>
+                    <div class="swiper-slide">
+                        <div class="img_wrap">
+                            <img src="images/collab5.png">
+                            <div class="icon_box">
+                                <a href="#"><img src="images/favorite.png"></a>
+                                <a href="#"><img src="images/pack.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img_wrap">
+                            <img src="images/collab1.png">
+                            <div class="icon_box">
+                                <a href="#"><img src="images/favorite.png"></a>
+                                <a href="#"><img src="images/pack.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img_wrap">
+                            <img src="images/collab2.png">
+                            <div class="icon_box">
+                                <a href="#"><img src="images/favorite.png"></a>
+                                <a href="#"><img src="images/pack.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img_wrap">
+                            <img src="images/collab3.png">
+                            <div class="icon_box">
+                                <a href="#"><img src="images/favorite.png"></a>
+                                <a href="#"><img src="images/pack.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 나머지 3개도 같은 방식으로 -->
                 </div>
+                <!-- 커스텀 페이징 넣을거면 이거 추가 -->
             </div>
-        </div>
-        <div id="collaboration">
-            <div>
-                <a href="#"><img src="images/collab.png" alt=""></a>
-            </div>
-            <div class="collab_pro">
-                <a href="#"><img src="images/collab1.png" alt=""></a>
-                <a href="#"><img src="images/collab2.png" alt=""></a>
-                <a href="#"><img src="images/collab3.png" alt=""></a>
-                <a href="#"><img src="images/collab4.png" alt=""></a>
-                <a href="#"><img src="images/collab5.png" alt=""></a>
-            </div>
-        </div>
+            <div class="swiper-pagination bestseller-pagination"></div>
+        </div> 
         <div id="event">
+            <div class="title_wrap">
+                <p class="title">Event</p>
+            </div>
             <div>
                 <a href="#"><img src="images/event1.png" alt=""></a>
                 <a href="#"><img src="images/event2.png" alt=""></a>
                 <a href="#"><img src="images/event3.png" alt=""></a>
             </div>
         </div>
-    </div>
+        <div id="cunsult">
+            <p><img src="images/eyebrows.png" alt="">
+            <button>눈썹 컨설팅 예약하기</button>
+            </p>
+        </div>
+        <div id="instagram">
+            <div class="title_wrap">
+                <p class="title">Instagram</p>
+            </div>
+            <div class="insta_pics">
+                    <a href="#"><img src="/images/ins1.png" alt="">
+                    <a href="#"><img src="/images/ins1.png" alt="">
+                    <a href="#"><img src="/images/ins1.png" alt="">
+                    <a href="#"><img src="/images/ins1.png" alt="">
+                    <a href="#"><img src="/images/ins1.png" alt="">
+                    <a href="#"><img src="/images/ins1.png" alt="">
+                    <a href="#"><img src="/images/ins1.png" alt="">
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="footer_inner">
+    
+            <div class="logo_area">
+                <img src="/images/logo.png" alt="benefit logo">
+                <p>Official SNS</p>
+                <div class="sns">
+                    <a href="#"><img src="/images/youtube.png" alt=""></a>
+                    <a href="#"><img src="/images/facebook.png" alt=""></a>
+                    <a href="#"><img src="/images/instagram.png" alt=""></a>
+                </div>
+            </div>
+            <div class="footer_menu">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer_menu">
+                <h4>Customer center</h4>
+                <ul>
+                    <li>1566-1696</li>
+                    <li>MON-FRI: 10 - 17시</li>
+                    <li>점심시간: 12 - 13시</li>
+                    <li>팩스번호: 03291-04-321644</li>
+                    <li>㈜서치라이트아이디</li>
+                </ul>
+            </div>
+    
+            <div class="footer_menu">
+                <h4>Company info</h4>
+                <ul>
+                    <li>법인명: 주식회사 디아이디</li>
+                    <li>대표: 김진영</li>
+                    <li>주소: 경기도 과천시 No.00</li>
+                    <li>사업자등록번호: 595-81-00040</li>
+                    <li>개인정보보호책임자: 이은진</li>
+                    <li>통신판매업신고번호: 2021-고양덕양구-2799</li>
+                    <li>Mail: cs@sdydaearyeng.com</li>
+                    <li>Partnership</li>
+                </ul>
+            </div>
+    
+        </div>
+    </footer>
+    
 </body>
 </html>
