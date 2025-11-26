@@ -15,15 +15,26 @@
     <!--플러그인 필수 css cdn 연결-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- 미디어쿼리 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
     <header>
-        <div class="logo">
-            <h1><a href="#"><img src="/images/logo.png" alt=""></a></h1>
+
+        <!-- 모바일 햄버거 -->
+        <div class="mobile_menu_btn">
+            <img src="/images/Menu_mobile.png" alt="menu">
         </div>
+    
+        <!-- 로고 -->
+        <div class="logo">
+            <h1><a href="#"><img src="/images/logo.png"></a></h1>
+        </div>
+    
+        <!-- PC 메뉴 + 아이콘 묶음 -->
         <div class="top_bnr">
-            <nav>
+            <nav class="pc_nav">
                 <a href="#">베스트셀러</a>
                 <a href="#">스킨</a>
                 <a href="#">립&치크</a>
@@ -32,23 +43,49 @@
                 <a href="#">매장찾기</a>
                 <a href="#">ABOUT</a>
             </nav>
+    
             <div class="search_shopping">
-                <a href="#"><img src="images/search.png" alt=""></a>
-                <a href="#"><img src="images/shopping_bag.png" alt=""></a>
+                <a href="#"><img src="images/search.png"></a>
+                <a href="#"><img src="images/shopping_bag.png"></a>
             </div>
         </div>
+    
+        <!-- 모바일 메뉴 -->
+        <nav class="mobile_nav">
+            <a href="#">베스트셀러</a>
+            <a href="#">스킨</a>
+            <a href="#">립&치크</a>
+            <a href="#">아이</a>
+            <a href="#">이벤트</a>
+            <a href="#">매장찾기</a>
+            <a href="#">ABOUT</a>
+        </nav>
+    
     </header>
     <main>
-        <div id="mainpage">
+        <section id="mainpage">
             <div class="swiper mainSwiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="/images/mainpage1.png"></div>
-                    <div class="swiper-slide"><img src="/images/mainpage.png"></div>
+                    <div class="swiper-slide">
+                        <picture>
+                            <source srcset="/images/mainpage1_mobile.png" media="(max-width:580px)">
+                            <img src="/images/mainpage1.png" alt="">
+                        </picture>
+                    </div>
+        
+                    <div class="swiper-slide">
+                        <picture>
+                            <source srcset="/images/mainpage2_mobile.png" media="(max-width:580px)">
+                            <img src="/images/mainpage.png" alt="">
+                        </picture>
+                    </div>
+        
                 </div>
+        
                 <div class="swiper-pagination custom-pagination"></div>
             </div>
-        </div>
-        <div id="bestseller">
+        </section>
+        <section id="bestseller">
             <div class="title_wrap">
                 <p class="title">Bestseller</p>
                 <p class="sub_title">베스트셀러</p>
@@ -58,9 +95,27 @@
             </div>
             <div class="swiper bestSwiper">
                 <div class="swiper-wrapper">
+                    <!-- 1번 제품 -->
                     <div class="swiper-slide">
                         <div class="img_wrap">
-                            <img src="images/best1.png">
+                            <picture>
+                                <source srcset="images/best1-m.png" media="(max-width:580px)">
+                                <img src="images/best1.png" alt="">
+                            </picture>
+                            <div class="icon_box">
+                                <a href="#"><img src="images/favorite.png"></a>
+                                <a href="#"><img src="images/pack.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2번 제품 -->
+                    <div class="swiper-slide">
+                        <div class="img_wrap">
+                            <picture>
+                                <source srcset="images/best2-m.png" media="(max-width:580px)">
+                                <img src="images/best2.png" alt="">
+                            </picture>
+        
                             <div class="icon_box">
                                 <a href="#"><img src="images/favorite.png"></a>
                                 <a href="#"><img src="images/pack.png"></a>
@@ -69,7 +124,11 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="img_wrap">
-                            <img src="images/best2.png">
+                            <picture>
+                                <source srcset="images/best3-m.png" media="(max-width:580px)">
+                                <img src="images/best3.png" alt="">
+                            </picture>
+        
                             <div class="icon_box">
                                 <a href="#"><img src="images/favorite.png"></a>
                                 <a href="#"><img src="images/pack.png"></a>
@@ -78,7 +137,10 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="img_wrap">
-                            <img src="images/best3.png">
+                            <picture>
+                                <source srcset="images/best2-m.png" media="(max-width:580px)">
+                                <img src="images/best4.png" alt="">
+                            </picture>
                             <div class="icon_box">
                                 <a href="#"><img src="images/favorite.png"></a>
                                 <a href="#"><img src="images/pack.png"></a>
@@ -87,7 +149,10 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="img_wrap">
-                            <img src="images/best4.png">
+                            <picture>
+                                <source srcset="images/best2-m.png" media="(max-width:580px)">
+                                <img src="images/best5.png" alt="">
+                            </picture>
                             <div class="icon_box">
                                 <a href="#"><img src="images/favorite.png"></a>
                                 <a href="#"><img src="images/pack.png"></a>
@@ -96,47 +161,21 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="img_wrap">
-                            <img src="images/best5.png">
+                            <picture>
+                                <source srcset="images/best2-m.png" media="(max-width:580px)">
+                                <img src="images/best6.png" alt="">
+                            </picture>
                             <div class="icon_box">
                                 <a href="#"><img src="images/favorite.png"></a>
                                 <a href="#"><img src="images/pack.png"></a>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="img_wrap">
-                            <img src="images/best1.png">
-                            <div class="icon_box">
-                                <a href="#"><img src="images/favorite.png"></a>
-                                <a href="#"><img src="images/pack.png"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="img_wrap">
-                            <img src="images/best2.png">
-                            <div class="icon_box">
-                                <a href="#"><img src="images/favorite.png"></a>
-                                <a href="#"><img src="images/pack.png"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="img_wrap">
-                            <img src="images/best3.png">
-                            <div class="icon_box">
-                                <a href="#"><img src="images/favorite.png"></a>
-                                <a href="#"><img src="images/pack.png"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 나머지 3개도 같은 방식으로 -->
                 </div>
-                <!-- 커스텀 페이징 넣을거면 이거 추가 -->
             </div>
             <div class="swiper-pagination bestseller-pagination"></div>
-        </div>       
-        <div id="sale">
+        </section>
+        <section id="sale">
             <div class="title_wrap">
                 <p class="title">Sale</p>
                 <p class="sub_title">인기상품 할인전</p>
@@ -145,21 +184,30 @@
                 <div class="bundle">
                     <div class="left">
                         <p>
-                            <img src="images/tintpic.png" alt="">
+                            <picture>
+                                <source srcset="images/tintpic-m.png" media="(max-width:580px)">
+                                <img src="images/tintpic.png" alt="">
+                            </picture>
                             <button><img src="images/rightdirect.png" alt=""></button>
                         </p>
                     </div>
                     <div class="sale_pros">
                         <div class="first_wrap">
                             <div class="img_wrap">
-                                <img src="images/tint1.png">
+                                <picture>
+                                    <source srcset="images/tint1-m.png" media="(max-width:580px)">
+                                    <img src="images/tint1.png" alt="">
+                                </picture>
                                 <div class="icon_box">
                                     <a href="#"><img src="images/favorite.png" alt=""></a>
                                     <a href="#"><img src="images/pack.png" alt=""></a>
                                 </div>
                             </div>
                             <div class="img_wrap">
-                                <img src="images/tint2 (2).png">
+                                <picture>
+                                    <source srcset="images/tint2-m.png" media="(max-width:580px)">
+                                    <img src="images/tint2 (2).png">
+                                </picture>
                                 <div class="icon_box">
                                     <a href="#"><img src="images/favorite.png" alt=""></a>
                                     <a href="#"><img src="images/pack.png" alt=""></a>
@@ -168,14 +216,20 @@
                         </div>
                         <div class="second_wrap">
                             <div class="img_wrap">
-                                <img src="images/tint3.png">
+                                <picture>
+                                    <source srcset="images/tint1-m.png" media="(max-width:580px)">
+                                    <img src="images/tint3.png" alt="">
+                                </picture>
                                 <div class="icon_box">
                                     <a href="#"><img src="images/favorite.png" alt=""></a>
                                     <a href="#"><img src="images/pack.png" alt=""></a>
                                 </div>
                             </div>
                             <div class="img_wrap">
-                                <img src="images/tint4 (2).png">
+                                <picture>
+                                    <source srcset="images/tint2-m.png" media="(max-width:580px)">
+                                    <img src="images/tint4 (2).png">
+                                </picture>
                                 <div class="icon_box">
                                     <a href="#"><img src="images/favorite.png" alt=""></a>
                                     <a href="#"><img src="images/pack.png" alt=""></a>
@@ -188,14 +242,20 @@
                     <div class="sale_pros">
                         <div class="first_wrap">
                             <div class="img_wrap">
-                                <img src="images/blush1.png">
+                                <picture>
+                                    <source srcset="images/tint1-m.png" media="(max-width:580px)">
+                                    <img src="images/tint1.png" alt="">
+                                </picture>
                                 <div class="icon_box">
                                     <a href="#"><img src="images/favorite.png" alt=""></a>
                                     <a href="#"><img src="images/pack.png" alt=""></a>
                                 </div>
                             </div>
                             <div class="img_wrap">
-                                <img src="images/blush2.png">
+                                <picture>
+                                    <source srcset="images/tint2-m.png" media="(max-width:580px)">
+                                    <img src="images/tint2 (2).png">
+                                </picture>
                                 <div class="icon_box">
                                     <a href="#"><img src="images/favorite.png" alt=""></a>
                                     <a href="#"><img src="images/pack.png" alt=""></a>
@@ -204,14 +264,20 @@
                         </div>
                         <div class="second_wrap">
                             <div class="img_wrap">
-                                <img src="images/blush3.png">
+                                <picture>
+                                    <source srcset="images/tint1-m.png" media="(max-width:580px)">
+                                    <img src="images/tint3.png" alt="">
+                                </picture>
                                 <div class="icon_box">
                                     <a href="#"><img src="images/favorite.png" alt=""></a>
                                     <a href="#"><img src="images/pack.png" alt=""></a>
                                 </div>
                             </div>
                             <div class="img_wrap">
-                                <img src="images/blush4.png">
+                                <picture>
+                                    <source srcset="images/tint2-m.png" media="(max-width:580px)">
+                                    <img src="images/tint4 (2).png">
+                                </picture>
                                 <div class="icon_box">
                                     <a href="#"><img src="images/favorite.png" alt=""></a>
                                     <a href="#"><img src="images/pack.png" alt=""></a>
@@ -221,17 +287,25 @@
                     </div>
                     <div class="right">
                         <p>
-                            <img src="images/blushpic.png" alt="">
+                            <picture>
+                                <source srcset="images/blushpic-m.png" media="(max-width:580px)">
+                                <img src="images/blushpic.png" alt="">
+                            </picture>
                             <button><img src="images/leftdirect.png" alt=""></button>
                         </p>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="collab_img">
-            <p><img src="images/collab.png" alt=""></p>
-        </div>
-        <div id="bestseller">
+        </section>
+        <section id="collab_img">
+            <p>
+                <picture>
+                    <source srcset="images/collab-m.png" media="(max-width:580px)">
+                    <img src="images/collab.png" alt="">
+                </picture>
+            </p>
+        </section>
+        <section id="bestseller">
             <div class="title_wrap">
                 <p class="title">collaboration</p>
             </div>
@@ -242,7 +316,10 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="img_wrap">
-                            <img src="images/collab1.png">
+                            <picture>
+                                <source srcset="images/collab1-m.png" media="(max-width:580px)">
+                                <img src="images/collab1.png" alt=""></p>
+                            </picture>
                             <div class="icon_box">
                                 <a href="#"><img src="images/favorite.png"></a>
                                 <a href="#"><img src="images/pack.png"></a>
@@ -251,7 +328,10 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="img_wrap">
-                            <img src="images/collab2.png">
+                            <picture>
+                                <source srcset="images/collab2-m.png" media="(max-width:580px)">
+                                <img src="images/collab2.png" alt=""></p>
+                            </picture>
                             <div class="icon_box">
                                 <a href="#"><img src="images/favorite.png"></a>
                                 <a href="#"><img src="images/pack.png"></a>
@@ -260,7 +340,10 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="img_wrap">
-                            <img src="images/collab3.png">
+                            <picture>
+                                <source srcset="images/collab3-m.png" media="(max-width:580px)">
+                                <img src="images/collab3.png" alt=""></p>
+                            </picture>
                             <div class="icon_box">
                                 <a href="#"><img src="images/favorite.png"></a>
                                 <a href="#"><img src="images/pack.png"></a>
@@ -269,7 +352,10 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="img_wrap">
-                            <img src="images/collab4.png">
+                            <picture>
+                                <source srcset="images/collab4-m.png" media="(max-width:580px)">
+                                <img src="images/collab4.png" alt=""></p>
+                            </picture>
                             <div class="icon_box">
                                 <a href="#"><img src="images/favorite.png"></a>
                                 <a href="#"><img src="images/pack.png"></a>
@@ -278,7 +364,10 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="img_wrap">
-                            <img src="images/collab5.png">
+                            <picture>
+                                <source srcset="images/collab5-m.png" media="(max-width:580px)">
+                                <img src="images/collab5.png" alt=""></p>
+                            </picture>
                             <div class="icon_box">
                                 <a href="#"><img src="images/favorite.png"></a>
                                 <a href="#"><img src="images/pack.png"></a>
@@ -287,7 +376,10 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="img_wrap">
-                            <img src="images/collab1.png">
+                            <picture>
+                                <source srcset="images/collab5-m.png" media="(max-width:580px)">
+                                <img src="images/collab5.png" alt=""></p>
+                            </picture>
                             <div class="icon_box">
                                 <a href="#"><img src="images/favorite.png"></a>
                                 <a href="#"><img src="images/pack.png"></a>
@@ -296,7 +388,10 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="img_wrap">
-                            <img src="images/collab2.png">
+                            <picture>
+                                <source srcset="images/collab1-m.png" media="(max-width:580px)">
+                                <img src="images/collab1.png" alt=""></p>
+                            </picture>
                             <div class="icon_box">
                                 <a href="#"><img src="images/favorite.png"></a>
                                 <a href="#"><img src="images/pack.png"></a>
@@ -305,7 +400,22 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="img_wrap">
-                            <img src="images/collab3.png">
+                            <picture>
+                                <source srcset="images/collab2-m.png" media="(max-width:580px)">
+                                <img src="images/collab2.png" alt=""></p>
+                            </picture>
+                            <div class="icon_box">
+                                <a href="#"><img src="images/favorite.png"></a>
+                                <a href="#"><img src="images/pack.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img_wrap">
+                            <picture>
+                                <source srcset="images/collab3-m.png" media="(max-width:580px)">
+                                <img src="images/collab3.png" alt=""></p>
+                            </picture>
                             <div class="icon_box">
                                 <a href="#"><img src="images/favorite.png"></a>
                                 <a href="#"><img src="images/pack.png"></a>
@@ -317,40 +427,144 @@
                 <!-- 커스텀 페이징 넣을거면 이거 추가 -->
             </div>
             <div class="swiper-pagination bestseller-pagination"></div>
-        </div> 
-        <div id="event">
+        </section> 
+        <section id="event">
             <div class="title_wrap">
                 <p class="title">Event</p>
+                <p class="sub_title">이벤트</p>
             </div>
-            <div>
-                <a href="#"><img src="images/event1.png" alt=""></a>
-                <a href="#"><img src="images/event2.png" alt=""></a>
-                <a href="#"><img src="images/event3.png" alt=""></a>
+        
+            <div class="more">
+                <p>전체보기</p>
             </div>
-        </div>
-        <div id="cunsult">
-            <p><img src="images/eyebrows.png" alt="">
+        
+            <div class="swiper eventSwiper">
+                <div class="swiper-wrapper">
+        
+                    <!-- 1번 이벤트 -->
+                    <div class="swiper-slide">
+                        <div class="img_wrap">
+                            <picture>
+                                <source srcset="images/event1-m.png" media="(max-width:580px)">
+                                <img src="images/event1.png" alt="이벤트 1 상세보기">
+                            </picture>
+                        </div>
+                    </div>
+        
+                    <!-- 2번 이벤트 -->
+                    <div class="swiper-slide">
+                        <div class="img_wrap">
+                            <picture>
+                                <source srcset="images/event2-m.png" media="(max-width:580px)">
+                                <img src="images/event2.png" alt="이벤트 2 상세보기">
+                            </picture>
+                        </div>
+                    </div>
+        
+                    <!-- 3번 이벤트 -->
+                    <div class="swiper-slide">
+                        <div class="img_wrap">
+                            <picture>
+                                <source srcset="images/event3-m.png" media="(max-width:580px)">
+                                <img src="images/event3.png" alt="이벤트 3 상세보기">
+                            </picture>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+        </section>       
+        <section id="consult">
+            <picture>
+                <source srcset="images/eyebrows-m.png" media="(max-width:580px)">
+                <img src="images/eyebrows.png" alt=""></p>
+            </picture>
+            <p>
             <button>눈썹 컨설팅 예약하기</button>
             </p>
-        </div>
+        </section>
         <div id="instagram">
             <div class="title_wrap">
                 <p class="title">Instagram</p>
             </div>
             <div class="insta_pics">
-                    <a href="#"><img src="/images/ins1.png" alt="">
-                    <a href="#"><img src="/images/ins1.png" alt="">
-                    <a href="#"><img src="/images/ins1.png" alt="">
-                    <a href="#"><img src="/images/ins1.png" alt="">
-                    <a href="#"><img src="/images/ins1.png" alt="">
-                    <a href="#"><img src="/images/ins1.png" alt="">
-                    <a href="#"><img src="/images/ins1.png" alt="">
+                <div class="img_wrap">
+                    <a href="#">
+                        <picture>
+                            <source srcset="images/ins1-m.png" media="(max-width:580px)">
+                            <img src="images/ins1.png" alt="">
+                        </picture>
+                    </a>
+                </div>
+                <div class="img_wrap">
+                    <a href="#">
+                        <picture>
+                            <source srcset="images/ins2-m.png" media="(max-width:580px)">
+                            <img src="images/ins2.png" alt="">
+                        </picture>
+                    </a>
+                </div>
+                <div class="img_wrap">
+                    <a href="#">
+                        <picture>
+                            <source srcset="images/ins3-m.png" media="(max-width:580px)">
+                            <img src="images/ins3.png" alt="">
+                        </picture>
+                    </a>
+                </div>
+                <div class="img_wrap">
+                    <a href="#">
+                        <picture>
+                            <source srcset="images/ins4-m.png" media="(max-width:580px)">
+                            <img src="images/ins4.png" alt="">
+                        </picture>
+                    </a>
+                </div>
+                <div class="img_wrap">
+                    <a href="#">
+                        <picture>
+                            <source srcset="images/ins5-m.png" media="(max-width:580px)">
+                            <img src="images/ins5.png" alt="">
+                        </picture>
+                    </a>
+                </div>
+                <div class="img_wrap">
+                    <a href="#">
+                        <picture>
+                            <source srcset="images/ins6-m.png" media="(max-width:580px)">
+                            <img src="images/ins6.png" alt="">
+                        </picture>
+                    </a>
+                </div>
+                <div class="img_wrap">
+                    <a href="#">
+                        <picture>
+                            <source srcset="images/ins7-m.png" media="(max-width:580px)">
+                            <img src="images/ins7.png" alt="">
+                        </picture>
+                    </a>
+                </div>
+                <div class="img_wrap">
+                    <a href="#">
+                        <picture>
+                            <source srcset="images/ins8-m.png" media="(max-width:580px)">
+                            <img src="images/ins8.png" alt="">
+                        </picture>
+                    </a>
+                </div>
+                <div class="img_wrap">
+                    <a href="#">
+                        <picture>
+                            <source srcset="images/ins9-m.png" media="(max-width:580px)">
+                            <img src="images/ins9.png" alt="">
+                        </picture>
+                    </a>
+                </div>
             </div>
         </div>
     </main>
     <footer id="footer">
         <div class="footer_inner">
-    
             <div class="logo_area">
                 <img src="/images/logo.png" alt="benefit logo">
                 <p>Official SNS</p>

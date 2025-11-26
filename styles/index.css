@@ -18,6 +18,7 @@ a {
   font-family: "Sree Krushnadevaraya", serif;
   font-size: 3rem;
   font-weight: 700;
+  text-align: center;
 }
 
 .sub_title {
@@ -71,42 +72,36 @@ a {
 
 header {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 10px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: sticky;
   top: 0;
   background: rgba(255, 255, 255, 0.9);
   z-index: 100;
 }
-header .logo img {
-  width: 140px;
+header .mobile_menu_btn {
+  display: none;
 }
 header .top_bnr {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 30px; /* 메뉴와 아이콘 간격 */
 }
-header .top_bnr nav {
+header .pc_nav {
   display: flex;
   gap: 25px;
 }
-header .top_bnr nav a {
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 5px 0;
-  position: relative;
-}
-header .top_bnr nav a:hover {
-  color: #c15b7f;
-}
-header .top_bnr .search_shopping {
+header .search_shopping {
   display: flex;
-  gap: 15px;
+  gap: 12px;
 }
-header .top_bnr .search_shopping img {
+header .search_shopping img {
   width: 22px;
+}
+header .mobile_nav {
+  display: none;
 }
 
 #mainpage {
@@ -236,6 +231,7 @@ header .top_bnr .search_shopping img {
 }
 
 #sale {
+  margin-bottom: 100px;
   background: #fafafa;
 }
 #sale .title_wrap {
@@ -288,6 +284,7 @@ header .top_bnr .search_shopping img {
 }
 
 #bestseller {
+  margin-top: 50px;
   position: relative;
   padding: 0 150px 100px;
   text-align: center;
@@ -349,36 +346,46 @@ header .top_bnr .search_shopping img {
 }
 
 #event {
+  margin-top: 50px;
+  padding: 0 150px 100px;
   text-align: center;
-  padding: 50px 150px;
+}
+#event .swiper {
+  overflow: visible; /* 👉 옆 카드 보이게 */
+  padding-bottom: 10px;
+}
+#event .swiper-wrapper {
+  overflow: visible; /* 👉 Swiper 기본 overflow 숨김 제거 */
+}
+#event .swiper-slide {
+  width: auto !important; /* 👉 슬라이드 너비 Swiper 계산 막기 */
+  flex-shrink: 0; /* 👉 잘리지 않게 고정 */
+  margin-right: 10px !important; /* ⭐ 카드 간격 딱 10px */
   display: flex;
-  flex-flow: column;
   justify-content: center;
 }
-#event div {
-  justify-content: center;
-  display: flex;
-  gap: 20px;
-}
-#event div a {
-  flex: 1;
-}
-#event div a img {
+#event .img_wrap {
   border-radius: 12px;
-  transition: 0.3s;
+  padding: 10px;
+  background: white;
 }
-#event div a img:hover {
-  transform: scale(1.03);
+#event .img_wrap picture img {
+  display: block;
+  border-radius: 12px;
+  width: auto; /* 👉 perview 그대로 보이게 */
+  max-width: 100%;
+  height: auto;
 }
 
-#cunsult {
+#consult {
+  margin-top: 50px;
   text-align: center;
 }
-#cunsult p {
+#consult p {
+  display: flex;
   position: relative; /* 버튼 위치 기준이 되는 부모 */
-  display: inline-block; /* 이미지 크기만큼만 영역 확보 */
 }
-#cunsult button {
+#consult button {
   position: absolute;
   left: calc(50% + 300px);
   bottom: 300px;
@@ -392,7 +399,7 @@ header .top_bnr .search_shopping img {
   border-radius: 6px;
   transition: 0.3s;
 }
-#cunsult button:hover {
+#consult button:hover {
   background: #000;
 }
 
@@ -403,6 +410,28 @@ header .top_bnr .search_shopping img {
 }
 #instagram .title_wrap .title {
   margin-bottom: 50px;
+}
+#instagram {
+  /* PC에서는 슬라이더 형태가 아님 */
+}
+#instagram .instaSwiper {
+  overflow: visible;
+}
+#instagram .insta_pics {
+  display: flex;
+  gap: 15px;
+  animation: slideRight 25s linear infinite;
+}
+#instagram .insta_pics img {
+  border-radius: 12px;
+}
+@keyframes slideRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 #footer {
@@ -475,6 +504,267 @@ header .top_bnr .search_shopping img {
 }
 #footer .footer_menu ul li a:hover {
   color: #000;
+}
+
+/* ===========================
+   📱 MOBILE (max-width: 480px)
+   440px 기준 디자인
+   =========================== */
+@media (max-width: 580px) {
+  /* 공통 레이아웃 */
+  #event,
+  #sale,
+  #bestseller,
+  #instagram,
+  #consult,
+  #footer .footer_inner {
+    padding: 0 20px !important; /* 좌우 20px로 통일 */
+  }
+  .title {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+  .sub_title {
+    font-size: 12px;
+    color: #777;
+  }
+  /* PC 스타일 그대로 두고… */
+  /* 모바일 */
+  header {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row; /* 로고·메뉴 위아래로 */
+    gap: 10px;
+    /* PC nav 숨기기 */
+  }
+  header .pc_nav {
+    display: none !important;
+  }
+  header {
+    /* 모바일 햄버거 버튼 보이기 */
+  }
+  header .mobile_menu_btn {
+    display: block;
+  }
+  header .mobile_menu_btn img {
+    width: 22px;
+  }
+  header {
+    /* 모바일 nav 숨김 */
+  }
+  header .mobile_nav {
+    display: none;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    background: white;
+    padding: 15px 20px;
+    border-top: 1px solid #ddd;
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+  header {
+    /* 클릭 시 나타남 */
+  }
+  header .mobile_nav.active {
+    display: flex;
+  }
+  header {
+    /* 오른쪽 아이콘 유지 */
+  }
+  header .search_shopping {
+    display: flex;
+    gap: 14px;
+  }
+  #mainpage .swiper {
+    width: 100%;
+  }
+  #mainpage picture img {
+    width: 100%;
+    height: auto;
+  }
+  #bestseller {
+    padding: 40px 20px 0;
+    text-align: center;
+  }
+  #bestseller .more p {
+    font-size: 12px;
+    margin-top: 10px;
+    text-align: right;
+    color: #555;
+  }
+  #bestseller {
+    /* 이미지 크기 조정 */
+  }
+  #bestseller .img_wrap picture img {
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+  #bestseller {
+    /* Swiper 슬라이드 가운데 정렬 */
+  }
+  #bestseller .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+  #bestseller .bestseller-pagination {
+    margin-top: 10px;
+  }
+  #sale {
+    margin-top: 40px;
+  }
+  #sale .title {
+    font-size: 24px;
+  }
+  #sale .sub_title {
+    font-size: 12px;
+  }
+  #sale .sale_wrap {
+    gap: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  #sale .bundle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+  }
+  #sale .left p,
+  #sale .right p {
+    position: relative;
+  }
+  #sale .left p picture img,
+  #sale .right p picture img {
+    width: 100%;
+    border-radius: 12px;
+  }
+  #sale {
+    /* ⭐ 버튼 완전 제거 */
+  }
+  #sale button {
+    display: none !important;
+  }
+  #sale .sale_pros {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center; /* ⭐ 가운데 정렬 */
+    align-items: center;
+  }
+  #sale .img_wrap picture img {
+    width: 100%;
+    border-radius: 12px;
+  }
+  #sale {
+    /* 순서 강제 */
+  }
+  #sale .bundle:first-child .left {
+    order: 1;
+  }
+  #sale .bundle:first-child .sale_pros {
+    order: 2;
+  }
+  #sale .bundle:last-child .right {
+    order: 3;
+  }
+  #sale .bundle:last-child .sale_pros {
+    order: 4;
+  }
+  #collab_img {
+    width: 100%;
+    text-align: center;
+  }
+  #event {
+    background-color: #F9CBD6;
+  }
+  #event .title_wrap .title {
+    font-size: 24px;
+  }
+  #event .title_wrap .sub_title {
+    font-size: 12px;
+  }
+  #event .more p {
+    font-size: 12px;
+    margin-top: 6px;
+  }
+  #event .swiper {
+    margin-top: 24px;
+  }
+  #event .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+  #event .img_wrap {
+    border-radius: 10px;
+  }
+  #event .img_wrap picture img {
+    /* ❗ 옆 카드 살짝 보이게 하려면 width:100% 강제 금지 */
+    width: auto;
+    max-width: 100%;
+    height: auto;
+  }
+  #consult {
+    margin-bottom: 50px;
+  }
+  #instagram .insta_pics {
+    display: flex;
+    gap: 10px;
+  }
+  #footer {
+    padding: 40px 0; /* 위아래만 여백 */
+    margin-top: 50px;
+  }
+  #footer .footer_inner {
+    width: 100%;
+    padding: 0 20px; /* 좌우 20px */
+    flex-direction: column; /* 세로 정렬 */
+    align-items: flex-start;
+    gap: 30px;
+  }
+  #footer {
+    /* 로고 영역은 위에, 가운데 정렬 */
+  }
+  #footer .logo_area {
+    width: 100%;
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+  }
+  #footer .logo_area img {
+    width: 140px;
+    margin-bottom: 15px;
+    display: block;
+  }
+  #footer .logo_area p {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+  #footer .logo_area .sns {
+    justify-content: flex-start;
+    gap: 12px;
+  }
+  #footer .logo_area .sns a img {
+    width: 24px;
+  }
+  #footer {
+    /* 각 메뉴 컬럼을 아래로 쌓기 */
+  }
+  #footer .footer_menu {
+    width: 100%;
+  }
+  #footer .footer_menu h4 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  #footer .footer_menu ul {
+    gap: 4px; /* 줄 사이 간격 조금 줄이기 */
+    line-height: 1.6;
+  }
+  #footer .footer_menu li {
+    font-size: 0.85rem;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -25,12 +25,20 @@ const bestSwiper = new Swiper('.bestSwiper', {
         bulletClass: 'swiper-pagination-bullet',
         bulletActiveClass: 'swiper-pagination-bullet-active',
     },
+       // ⭐⭐⭐ 모바일/태블릿/PC 반응형 설정
     breakpoints: {
-        1400: { slidesPerView: 5 },
-        1200: { slidesPerView: 4 },
-        992:  { slidesPerView: 3 },
-        768:  { slidesPerView: 2 },
-        480:  { slidesPerView: 1 }
+        0: {               // 모바일
+            slidesPerView: 3,
+            spaceBetween: 15
+        },
+        580: {             // 태블릿 정도
+            slidesPerView: 4,
+            spaceBetween: 20
+        },
+        1024: {            // PC
+            slidesPerView: 5,
+            spaceBetween: 30
+        }
     }
 });
 const collabSwiper = new Swiper('.collabSwiper', {
@@ -53,6 +61,23 @@ const collabSwiper = new Swiper('.collabSwiper', {
         480:  { slidesPerView: 1 }
     }
 });
+var eventSwiper = new Swiper(".eventSwiper", {
+    spaceBetween: 0,
+    breakpoints: {
+        0: {               // 모바일 기본
+            slidesPerView: 1.2,   // ⭐ 오른쪽 카드가 살짝 보임
+        },
+        580: {             // 태블릿 이상
+            slidesPerView: 2,
+        },
+        1200: {            // PC
+            slidesPerView: 3,
+        }
+    },
+});
+
+/* 모바일스크립트 */
+
 
 
 

@@ -18,6 +18,7 @@ a {
     font-family: "Sree Krushnadevaraya", serif;
     font-size: 3rem;
     font-weight: 700;
+    text-align: center;
 }
 .sub_title {
     font-size: 1rem;
@@ -76,50 +77,38 @@ a {
 // ===========================
 header {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 10px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     position: sticky;
     top: 0;
     background: rgba(255,255,255,0.9);
     z-index: 100;
 
-    .logo img {
-        width: 140px;
-    }
+    .mobile_menu_btn { display: none; }
 
     .top_bnr {
         display: flex;
         align-items: center;
-        gap: 40px;
-
-        nav {
-            display: flex;
-            gap: 25px;
-
-            a {
-                font-size: 1rem;
-                font-weight: 500;
-                padding: 5px 0;
-                position: relative;
-
-                &:hover {
-                    color: #c15b7f;
-                }
-            }
-        }
-
-        .search_shopping {
-            display: flex;
-            gap: 15px;
-
-            img {
-                width: 22px;
-            }
-        }
+        gap: 30px; /* 메뉴와 아이콘 간격 */
     }
+
+    .pc_nav {
+        display: flex;
+        gap: 25px;
+    }
+
+    .search_shopping {
+        display: flex;
+        gap: 12px;
+
+        img { width: 22px; }
+    }
+
+    .mobile_nav { display: none; }
 }
+
 
 #mainpage{
     position: relative;
@@ -264,6 +253,7 @@ header {
 // SALE
 // ===========================
 #sale {
+    margin-bottom: 100px;
     background: #fafafa;
     .title_wrap {
         margin: 50PX 0;
@@ -316,6 +306,7 @@ header {
 // COLLABORATION
 // ===========================
 #bestseller {
+    margin-top: 50px;
     position: relative;   // ⭐⭐ 이거 무조건 필요
     padding:0 150px 100px;
     text-align: center;
@@ -387,40 +378,52 @@ header {
 // ===========================
 // EVENT
 // ===========================
+
 #event {
+    margin-top: 50px;
+    padding: 0 150px 100px;
     text-align: center;
-    padding: 50px 150px;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
 
-    div {
-        justify-content: center;
+    .swiper {
+        overflow: visible;         /* 👉 옆 카드 보이게 */
+        padding-bottom: 10px;
+    }
+
+    .swiper-wrapper {
+        overflow: visible;         /* 👉 Swiper 기본 overflow 숨김 제거 */
+    }
+
+    .swiper-slide {
+        width: auto !important;    /* 👉 슬라이드 너비 Swiper 계산 막기 */
+        flex-shrink: 0;            /* 👉 잘리지 않게 고정 */
+        margin-right: 10px !important;  /* ⭐ 카드 간격 딱 10px */
         display: flex;
-        gap: 20px;
+        justify-content: center;
+    }
 
-        a {
-            flex: 1;
+    .img_wrap {
+        border-radius: 12px;
+        padding: 10px;
+        background: white;
 
-            img {
-                border-radius: 12px;
-                transition: .3s;
-
-                &:hover {
-                    transform: scale(1.03);
-                }
-            }
+        picture img {
+            display: block;
+            border-radius: 12px;
+            width: auto;          /* 👉 perview 그대로 보이게 */
+            max-width: 100%;
+            height: auto;
         }
     }
 }
 // ===========================
 // CONSULT
 // ===========================
-#cunsult {
+#consult {
+    margin-top: 50px;
     text-align: center;
     p {
+        display: flex;
         position: relative; /* 버튼 위치 기준이 되는 부모 */
-        display: inline-block; /* 이미지 크기만큼만 영역 확보 */
     }
     button {
         position: absolute;
@@ -449,13 +452,30 @@ header {
     padding: 150px 40px;
     background: #fafafa;
 
-    .title_wrap {
-        .title {
-            margin-bottom: 50px;
-        }
+    .title_wrap .title {
+        margin-bottom: 50px;
+    }
+
+    /* PC에서는 슬라이더 형태가 아님 */
+    .instaSwiper {
+        overflow: visible;
+    }
+
+    .insta_pics {
+        display: flex;
+        gap: 15px;
+        animation: slideRight 25s linear infinite;
+    }
+
+    .insta_pics img {
+        border-radius: 12px;
+    }
+
+    @keyframes slideRight {
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(0); }
     }
 }
-
 #footer {
     background: #EFE3E3; /* 은은한 베이지 */
     padding: 60px 0;
@@ -532,6 +552,282 @@ header {
                         color: #000;
                     }
                 }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+/* ===========================
+   📱 MOBILE (max-width: 480px)
+   440px 기준 디자인
+   =========================== */
+    @media (max-width: 580px) {
+    /* 공통 레이아웃 */
+    body {
+    }
+    #event,
+    #sale,
+    #bestseller,
+    #instagram,
+    #consult,
+    #footer .footer_inner {
+        padding: 0 20px !important;   /* 좌우 20px로 통일 */
+    }
+    .title {
+        font-size: 24px;
+        margin-bottom: 4px;
+    }
+
+    .sub_title {
+        font-size: 12px;
+        color: #777;
+    }
+    /* PC 스타일 그대로 두고… */
+
+/* 모바일 */
+
+    header {
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: row; /* 로고·메뉴 위아래로 */
+        gap: 10px;
+
+        /* PC nav 숨기기 */
+        .pc_nav {
+            display: none !important;
+        }
+
+        /* 모바일 햄버거 버튼 보이기 */
+        .mobile_menu_btn {
+            display: block;
+
+            img { width: 22px; }
+        }
+
+        /* 모바일 nav 숨김 */
+        .mobile_nav {
+            display: none;
+            flex-direction: column;
+            gap: 14px;
+            width: 100%;
+            background: white;
+            padding: 15px 20px;
+            border-top: 1px solid #ddd;
+            position: absolute;
+            top: 60px;
+            left: 0;
+        }
+
+        /* 클릭 시 나타남 */
+        .mobile_nav.active {
+            display: flex;
+        }
+
+        /* 오른쪽 아이콘 유지 */
+        .search_shopping {
+            display: flex;
+            gap: 14px;
+        }
+    }
+    #mainpage {
+
+        .swiper {
+            width: 100%;
+        }
+
+        picture img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    #bestseller {
+        padding: 40px 20px 0;
+        text-align: center;
+        .more p {
+            font-size: 12px;
+            margin-top: 10px;
+            text-align: right;
+            color: #555;
+        }
+
+        /* 이미지 크기 조정 */
+        .img_wrap picture img {
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+
+        /* Swiper 슬라이드 가운데 정렬 */
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+        }
+
+        .bestseller-pagination {
+            margin-top: 10px;
+        }
+    }
+    #sale {
+        margin-top: 40px;
+    
+        .title { font-size: 24px; }
+        .sub_title { font-size: 12px; }
+    
+        .sale_wrap { 
+            gap: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .bundle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+    
+        .left p,
+        .right p {
+            position: relative;
+    
+            picture img {
+                width: 100%;
+                border-radius: 12px;
+            }
+        }
+    
+        /* ⭐ 버튼 완전 제거 */
+        button {
+            display: none !important;
+        }
+    
+        .sale_pros {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            justify-items: center;   /* ⭐ 가운데 정렬 */
+            align-items: center;
+        }
+    
+        .img_wrap picture img {
+            width: 100%;
+            border-radius: 12px;
+        }
+    
+        /* 순서 강제 */
+        .bundle:first-child .left { order: 1; }
+        .bundle:first-child .sale_pros { order: 2; }
+        .bundle:last-child .right { order: 3; }
+        .bundle:last-child .sale_pros { order: 4; }
+    }
+    #collab_img {
+        width: 100%;
+        text-align: center;
+    }
+    #event {
+        background-color: #F9CBD6;
+        .title_wrap {
+            .title {
+                font-size: 24px;
+            }
+            .sub_title {
+                font-size: 12px;
+            }
+        }
+
+        .more p {
+            font-size: 12px;
+            margin-top: 6px;
+        }
+
+        .swiper {
+            margin-top: 24px;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;  // 살짝 왼쪽 붙여서 옆 카드 보이기 자연스럽게
+        }
+
+        .img_wrap {
+            border-radius: 10px;
+
+            picture img {
+                /* ❗ 옆 카드 살짝 보이게 하려면 width:100% 강제 금지 */
+                width: auto;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+    #consult {
+        margin-bottom: 50px;
+    }
+    #instagram .insta_pics {
+    display: flex;
+    gap: 10px;
+
+    }
+    #footer {
+        padding: 40px 0;   /* 위아래만 여백 */
+        margin-top: 50px;
+        .footer_inner {
+            width: 100%;
+            padding: 0 20px;        /* 좌우 20px */
+            flex-direction: column; /* 세로 정렬 */
+            align-items: flex-start;
+            gap: 30px;
+        }
+
+        /* 로고 영역은 위에, 가운데 정렬 */
+        .logo_area {
+            width: 100%;
+            text-align: left;       /* 텍스트 왼쪽 정렬 */
+            
+            img {
+                width: 140px;
+                margin-bottom: 15px;
+                display: block;
+            }
+
+            p {
+                font-size: 0.9rem;
+                margin-bottom: 8px;
+            }
+
+            .sns {
+                justify-content: flex-start;
+                gap: 12px;
+
+                a img {
+                    width: 24px;
+                }
+            }
+        }
+
+        /* 각 메뉴 컬럼을 아래로 쌓기 */
+        .footer_menu {
+            width: 100%;
+
+            h4 {
+                font-size: 1rem;
+                margin-bottom: 8px;
+            }
+
+            ul {
+                gap: 4px;           /* 줄 사이 간격 조금 줄이기 */
+                line-height: 1.6;
+            }
+
+            li {
+                font-size: 0.85rem;
             }
         }
     }
