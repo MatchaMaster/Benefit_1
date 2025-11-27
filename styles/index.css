@@ -72,7 +72,7 @@ a {
 
 header {
   width: 100%;
-  padding: 10px 40px;
+  padding: 0 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -87,11 +87,37 @@ header .mobile_menu_btn {
 header .top_bnr {
   display: flex;
   align-items: center;
-  gap: 30px; /* 메뉴와 아이콘 간격 */
+  gap: 50px; /* 메뉴와 아이콘 간격 */
 }
 header .pc_nav {
   display: flex;
-  gap: 25px;
+  gap: 30px;
+  position: relative;
+}
+header .pc_nav .menu_item {
+  position: relative;
+}
+header .pc_nav .menu_item:hover {
+  color: #c15b7f;
+}
+header .pc_nav .sub_menu {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 10px 0;
+  min-width: 140px;
+  z-index: 100;
+}
+header .pc_nav .sub_menu a {
+  display: block;
+  padding: 8px 15px;
+  white-space: nowrap;
+}
+header .pc_nav .menu_item:hover .sub_menu {
+  display: block;
 }
 header .search_shopping {
   display: flex;
@@ -569,6 +595,22 @@ header .mobile_nav {
   }
   header .mobile_nav.active {
     display: flex;
+  }
+  header .mobile_nav .mobile_menu_item {
+    border-bottom: 1px solid #eee;
+  }
+  header .mobile_main {
+    display: block;
+    padding: 15px;
+  }
+  header .mobile_sub {
+    display: none;
+    background: #f7f7f7;
+  }
+  header .mobile_sub a {
+    display: block;
+    padding: 12px 20px;
+    font-size: 14px;
   }
   header {
     /* 오른쪽 아이콘 유지 */
